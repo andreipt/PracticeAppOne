@@ -1,0 +1,56 @@
+// Top-level build file where you can add configuration options common to all sub-projects/modules.
+
+buildscript {
+    repositories {
+        google()
+        jcenter()
+        
+    }
+    dependencies {
+        classpath 'com.android.tools.build:gradle:3.4.2'
+        
+        // NOTE: Do not place your application dependencies here; they belong
+        // in the individual module build.gradle files
+    }
+}
+
+allprojects {
+    repositories {
+        google()
+        jcenter()
+        
+    }
+}
+
+task clean(type: Delete) {
+    delete rootProject.buildDir
+}
+
+ext {
+    // Base:
+    base_compileSdkVersion = 29
+    base_minSdkVersion = 21
+    base_targetSdkVersion = 29
+    base_buildToolsVersion = "29.0.1"
+
+    androidx_appcompatVersion = "1.1.0-rc01"
+    androidx_constraintLayoutVersion = "1.1.3"
+    androidx_swipeRefreshLayoutVersion = "1.0.0"
+    androidx_lifecycleExtensions = "2.0.0"
+    androidx_lifecycleCompiler = "2.0.0"
+    androidx_recyclerviewVersion = "1.1.0-beta03"
+    androidx_room_runtime = "2.1.0"
+    androidx_room_compiler = "2.1.0"
+    glideVersion = "4.9.0"
+    glideCompilerVersion = "4.9.0"
+    butterknifeVersion = "10.1.0"
+    butterknifeCompilerVersion = "10.1.0"
+    retrofitVersion = "2.6.0"
+
+
+    test_junitVersion = "4.12"
+    test_mockitoVersion = "3.0.0"
+    test_androidArchCoreTestingVersion = "1.1.1"
+    test_androidx_testRunner = "1.2.0"
+    test_androidx_expressoCore = "3.2.0"
+}

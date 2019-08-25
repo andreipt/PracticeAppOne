@@ -1,0 +1,50 @@
+apply plugin: 'com.android.application'
+
+android {
+    compileSdkVersion rootProject.ext.base_compileSdkVersion
+    buildToolsVersion rootProject.ext.base_buildToolsVersion
+    defaultConfig {
+        applicationId "com.andrei.practiceappone"
+        minSdkVersion rootProject.ext.base_minSdkVersion
+        targetSdkVersion rootProject.ext.base_targetSdkVersion
+        versionCode 1
+        versionName "1.0"
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+    compileOptions {
+        sourceCompatibility = '1.8'
+        targetCompatibility = '1.8'
+    }
+}
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    implementation "androidx.appcompat:appcompat:${rootProject.ext.androidx_appcompatVersion}"
+    implementation "androidx.constraintlayout:constraintlayout:${rootProject.ext.androidx_constraintLayoutVersion}"
+    implementation "androidx.swiperefreshlayout:swiperefreshlayout:${rootProject.ext.androidx_swipeRefreshLayoutVersion}"
+    implementation "androidx.lifecycle:lifecycle-extensions:${rootProject.ext.androidx_lifecycleExtensions}"
+    implementation "androidx.recyclerview:recyclerview:${rootProject.ext.androidx_recyclerviewVersion}"
+    implementation "androidx.room:room-runtime:${rootProject.ext.androidx_room_runtime}"
+    implementation "com.github.bumptech.glide:glide:${rootProject.ext.glideVersion}"
+    implementation "com.jakewharton:butterknife:${rootProject.ext.butterknifeVersion}"
+    implementation "com.squareup.retrofit2:retrofit:${rootProject.ext.retrofitVersion}"
+    implementation "com.squareup.retrofit2:converter-moshi:${rootProject.ext.retrofitVersion}"
+
+    annotationProcessor "androidx.room:room-compiler:${rootProject.ext.androidx_room_compiler}"
+    annotationProcessor "androidx.lifecycle:lifecycle-compiler:${rootProject.ext.androidx_lifecycleCompiler}"
+    annotationProcessor "com.github.bumptech.glide:compiler:${rootProject.ext.glideCompilerVersion}"
+    annotationProcessor "com.jakewharton:butterknife-compiler:${rootProject.ext.butterknifeCompilerVersion}"
+
+    testImplementation "junit:junit:${rootProject.ext.test_junitVersion}"
+    testImplementation "android.arch.core:core-testing:${rootProject.ext.test_androidArchCoreTestingVersion}"
+    testImplementation "org.mockito:mockito-core:${rootProject.ext.test_mockitoVersion}"
+    androidTestImplementation "androidx.test:runner:${rootProject.ext.test_androidx_testRunner}"
+    androidTestImplementation "androidx.test.espresso:espresso-core:${rootProject.ext.test_androidx_expressoCore}"
+
+}
